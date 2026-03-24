@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CroVew — Dark-first analytics dashboard
+   Palette: Deep navy/charcoal surfaces, cyan-teal accent, cool neutrals
+   Font: DM Sans (body) + DM Mono (data) */
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+  --background: 220 20% 97%;
+  --foreground: 220 25% 10%;
+  --border: 220 12% 88%;
+  --card: 220 18% 98%;
+  --card-foreground: 220 25% 10%;
+  --card-border: 220 12% 92%;
+  --sidebar: 222 30% 12%;
+  --sidebar-foreground: 210 20% 92%;
+  --sidebar-border: 222 25% 16%;
+  --sidebar-primary: 174 72% 46%;
+  --sidebar-primary-foreground: 220 25% 10%;
+  --sidebar-accent: 222 25% 18%;
+  --sidebar-accent-foreground: 210 20% 92%;
+  --sidebar-ring: 174 72% 46%;
+  --popover: 220 18% 96%;
+  --popover-foreground: 220 25% 10%;
+  --popover-border: 220 12% 88%;
+  --primary: 174 72% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 12% 91%;
+  --secondary-foreground: 220 25% 10%;
+  --muted: 220 12% 92%;
+  --muted-foreground: 220 8% 46%;
+  --accent: 220 14% 92%;
+  --accent-foreground: 220 25% 10%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 220 12% 80%;
+  --ring: 174 72% 40%;
+  --chart-1: 174 72% 46%;
+  --chart-2: 199 89% 48%;
+  --chart-3: 262 60% 58%;
+  --chart-4: 43 74% 49%;
+  --chart-5: 142 60% 45%;
+  --font-sans: 'DM Sans', 'Inter', sans-serif;
+  --font-mono: 'DM Mono', 'JetBrains Mono', monospace;
+  --radius: .5rem;
+  --shadow-2xs: 0px 1px 2px hsl(220 20% 10% / 0.04);
+  --shadow-xs: 0px 1px 3px hsl(220 20% 10% / 0.06);
+  --shadow-sm: 0px 2px 4px hsl(220 20% 10% / 0.06);
+  --shadow: 0px 2px 8px hsl(220 20% 10% / 0.08);
+  --shadow-md: 0px 4px 12px hsl(220 20% 10% / 0.08);
+  --shadow-lg: 0px 8px 24px hsl(220 20% 10% / 0.1);
+  --shadow-xl: 0px 12px 32px hsl(220 20% 10% / 0.12);
+  --shadow-2xl: 0px 16px 48px hsl(220 20% 10% / 0.16);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+/* DARK MODE — the primary mode for this dashboard */
+.dark {
+  --button-outline: rgba(255,255,255, .08);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .08);
+  --background: 222 30% 7%;
+  --foreground: 210 20% 92%;
+  --border: 222 18% 16%;
+  --card: 222 28% 10%;
+  --card-foreground: 210 20% 92%;
+  --card-border: 222 18% 14%;
+  --sidebar: 222 32% 8%;
+  --sidebar-foreground: 210 20% 88%;
+  --sidebar-border: 222 25% 14%;
+  --sidebar-primary: 174 72% 50%;
+  --sidebar-primary-foreground: 222 30% 7%;
+  --sidebar-accent: 222 25% 14%;
+  --sidebar-accent-foreground: 210 20% 88%;
+  --sidebar-ring: 174 72% 50%;
+  --popover: 222 28% 12%;
+  --popover-foreground: 210 20% 92%;
+  --popover-border: 222 18% 18%;
+  --primary: 174 72% 50%;
+  --primary-foreground: 222 30% 7%;
+  --secondary: 222 18% 16%;
+  --secondary-foreground: 210 20% 88%;
+  --muted: 222 15% 18%;
+  --muted-foreground: 220 10% 55%;
+  --accent: 222 18% 16%;
+  --accent-foreground: 210 20% 88%;
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 222 15% 25%;
+  --ring: 174 72% 50%;
+  --chart-1: 174 72% 55%;
+  --chart-2: 199 89% 58%;
+  --chart-3: 262 60% 68%;
+  --chart-4: 43 74% 65%;
+  --chart-5: 142 60% 55%;
+  --shadow-2xs: 0px 1px 2px hsl(0 0% 0% / 0.15);
+  --shadow-xs: 0px 1px 3px hsl(0 0% 0% / 0.2);
+  --shadow-sm: 0px 2px 4px hsl(0 0% 0% / 0.2);
+  --shadow: 0px 2px 8px hsl(0 0% 0% / 0.25);
+  --shadow-md: 0px 4px 12px hsl(0 0% 0% / 0.3);
+  --shadow-lg: 0px 8px 24px hsl(0 0% 0% / 0.35);
+  --shadow-xl: 0px 12px 32px hsl(0 0% 0% / 0.4);
+  --shadow-2xl: 0px 16px 48px hsl(0 0% 0% / 0.5);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Tabular nums for all data values */
+.tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Shimmer for skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--accent)) 50%, hsl(var(--muted)) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Slide-in for new events */
+@keyframes slide-in-top {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in {
+  animation: slide-in-top 0.3s ease-out;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: hsl(222, 28%, 10%);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(222, 18%, 22%);
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(222, 18%, 28%);
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
